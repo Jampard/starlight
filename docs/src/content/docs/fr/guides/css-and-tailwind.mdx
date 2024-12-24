@@ -26,7 +26,7 @@ Personnalisez les styles appliqués à votre site Starlight en fournissant des f
    // astro.config.mjs
    import { defineConfig } from 'astro/config';
    import starlight from '@astrojs/starlight';
-
+   
    export default defineConfig({
    	integrations: [
    		starlight({
@@ -87,9 +87,9 @@ yarn create astro --template starlight/tailwind
 
 Si vous avez déjà un site Starlight et que vous souhaitez ajouter Tailwind CSS, suivez ces étapes.
 
-1.  Ajoutez l'intégration Astro pour Tailwind :
+1. Ajoutez l'intégration Astro pour Tailwind :
 
-    <Tabs>
+   <Tabs>
 
     <TabItem label="npm">
 
@@ -117,9 +117,9 @@ Si vous avez déjà un site Starlight et que vous souhaitez ajouter Tailwind CSS
 
     </Tabs>
 
-2.  Installez le module d'extension Tailwind de Starlight :
+2. Installez le module d'extension Tailwind de Starlight :
 
-    <Tabs>
+   <Tabs>
 
     <TabItem label="npm">
 
@@ -147,52 +147,52 @@ Si vous avez déjà un site Starlight et que vous souhaitez ajouter Tailwind CSS
 
     </Tabs>
 
-3.  Créez un fichier CSS pour les styles de base de Tailwind, par exemple dans `src/tailwind.css` :
+3. Créez un fichier CSS pour les styles de base de Tailwind, par exemple dans `src/tailwind.css` :
 
-    ```css
-    /* src/tailwind.css */
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-    ```
+   ```css
+   /* src/tailwind.css */
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
 
-4.  Mettez à jour votre fichier de configuration Astro pour utiliser vos styles de base de Tailwind et désactiver les styles de base par défaut :
+4. Mettez à jour votre fichier de configuration Astro pour utiliser vos styles de base de Tailwind et désactiver les styles de base par défaut :
 
-    ```js {11-12,16-17}
-    // astro.config.mjs
-    import { defineConfig } from 'astro/config';
-    import starlight from '@astrojs/starlight';
-    import tailwind from '@astrojs/tailwind';
+   ```js {11-12,16-17}
+   // astro.config.mjs
+   import { defineConfig } from 'astro/config';
+   import starlight from '@astrojs/starlight';
+   import tailwind from '@astrojs/tailwind';
+   
+   export default defineConfig({
+   	integrations: [
+   		starlight({
+   			title: 'Documentation avec Tailwind',
+   			customCss: [
+   				// Chemin vers vos style de base de Tailwind:
+   				'./src/tailwind.css',
+   			],
+   		}),
+   		tailwind({
+   			// Désactive les styles de base par défaut:
+   			applyBaseStyles: false,
+   		}),
+   	],
+   });
+   ```
 
-    export default defineConfig({
-    	integrations: [
-    		starlight({
-    			title: 'Documentation avec Tailwind',
-    			customCss: [
-    				// Chemin vers vos style de base de Tailwind:
-    				'./src/tailwind.css',
-    			],
-    		}),
-    		tailwind({
-    			// Désactive les styles de base par défaut:
-    			applyBaseStyles: false,
-    		}),
-    	],
-    });
-    ```
+5. Ajoutez le module d'extension Tailwind de Starlight au fichier `tailwind.config.mjs` :
 
-5.  Ajoutez le module d'extension Tailwind de Starlight au fichier `tailwind.config.mjs` :
-
-    ```js ins={2,7}
-    // tailwind.config.mjs
-    import starlightPlugin from '@astrojs/starlight-tailwind';
-
-    /** @type {import('tailwindcss').Config} */
-    export default {
-    	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-    	plugins: [starlightPlugin()],
-    };
-    ```
+   ```js ins={2,7}
+   // tailwind.config.mjs
+   import starlightPlugin from '@astrojs/starlight-tailwind';
+   
+   /** @type {import('tailwindcss').Config} */
+   export default {
+   	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+   	plugins: [starlightPlugin()],
+   };
+   ```
 
 ### Mettre en forme Starlight avec Tailwind
 
