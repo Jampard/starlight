@@ -12,6 +12,12 @@ Veillez à consulter les [MDX docs](https://mdxjs.com/docs/what-is-mdx/#markdown
 Vous pouvez personnaliser chaque page individuellement en définissant des valeurs dans leur frontmatter.
 Le frontmatter se situe en haut de vos fichiers entre les séparateurs `---` :
 
+Franchement c'est asse complique.
+
+- [x] deja
+- [x] ce
+- [x] m
+
 ```md title="src/content/docs/exemple.md"
 ---
 title: Le titre de ma page
@@ -126,7 +132,7 @@ npm run create astro@latest --template starlight
 
 :::
 
-````md
+```md
 :::note
 Starlight est une boîte à outils pour sites web de documentation construite avec [Astro](https://astro.build/). Vous pouvez démarrer avec cette commande :
 
@@ -135,13 +141,13 @@ npm run create astro@latest --template starlight
 ```
 
 :::
-````
+```
 
 ### Titres personnalisés dans les asides
 
 Vous pouvez spécifier un titre personnalisé pour l'aparté entre crochets après le type d'aparté, par exemple `:::tip[Le saviez-vous ?]`.
 
-:::tip[Le saviez-vous ?]
+:::tip\[Le saviez-vous ?\]
 Astro vous aide à construire des sites Web plus rapides grâce à ["Islands Architecture"](https://docs.astro.build/fr/concepts/islands/).
 :::
 
@@ -197,7 +203,7 @@ Vos utilisateurs peuvent être plus productifs et trouver votre produit plus fac
 
 ## Blocs de code
 
-Un bloc de code est indiqué par un bloc avec trois accents graves <code>```</code> au début et à la fin. Vous pouvez indiquer le langage de programmation utilisé après les premiers accents graves.
+Un bloc de code est indiqué par un bloc avec trois accents graves <code>\`\`\`</code> au début et à la fin. Vous pouvez indiquer le langage de programmation utilisé après les premiers accents graves.
 
 ```js
 // Code Javascript avec coloration syntaxique.
@@ -207,7 +213,7 @@ var fun = function lang(l) {
 };
 ```
 
-````md
+```md
 ```js
 // Code Javascript avec coloration syntaxique.
 var fun = function lang(l) {
@@ -215,7 +221,7 @@ var fun = function lang(l) {
   return true;
 };
 ```
-````
+```
 
 ### Fonctionnalités d'Expressive Code
 
@@ -245,14 +251,14 @@ Certaines des options les plus courantes sont présentées ci-dessous :
   }
   ```
 
-  ````md
+  ```md
   ```js {2-3}
   function demo() {
     // Cette ligne (#2) et la suivante sont mises en évidence
     return 'Ceci est la ligne #3 de cet exemple';
   }
   ```
-  ````
+  ```
 
 - [Marquer des sélections de texte à l'aide du marqueur `" "` ou d'expressions régulières](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-text-markers/README.md#marking-individual-text-inside-lines) :
 
@@ -263,14 +269,14 @@ Certaines des options les plus courantes sont présentées ci-dessous :
   }
   ```
 
-  ````md
+  ```md
   ```js "termes individuels" /Même.*charge/
   // Des termes individuels peuvent également être mis en évidence
   function demo() {
     return 'Même les expressions régulières sont prises en charge';
   }
   ```
-  ````
+  ```
 
 - [Marquer du texte ou des lignes comme insérés ou supprimés avec `ins` ou `del`](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-text-markers/README.md#selecting-marker-types-mark-ins-del) :
 
@@ -282,7 +288,7 @@ Certaines des options les plus courantes sont présentées ci-dessous :
   }
   ```
 
-  ````md
+  ```md
   ```js "return true;" ins="insertion" del="suppression"
   function demo() {
     console.log("Voici des marqueurs d'insertion et de suppression");
@@ -290,7 +296,7 @@ Certaines des options les plus courantes sont présentées ci-dessous :
     return true;
   }
   ```
-  ````
+  ```
 
 - [Combiner coloration syntaxique et syntaxe de type `diff`](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-text-markers/README.md#combining-syntax-highlighting-with-diff-like-syntax) :
 
@@ -303,7 +309,7 @@ Certaines des options les plus courantes sont présentées ci-dessous :
     }
   ```
 
-  ````md
+  ```md
   ```diff lang="js"
     function ceciEstDuJavaScript() {
       // Ce bloc entier utilise la coloration syntaxique JavaScript,
@@ -312,7 +318,7 @@ Certaines des options les plus courantes sont présentées ci-dessous :
   +   console.log('Nouveau code brillant !')
     }
   ```
-  ````
+  ```
 
 #### Cadres et titres
 
@@ -329,12 +335,12 @@ Le titre optionnel d'un bloc de code peut être défini soit avec un attribut `t
   console.log('Hello World!');
   ```
 
-  ````md
+  ```md
   ```js
   // mon-fichier-de-test.js
   console.log('Hello World!');
   ```
-  ````
+  ```
 
 - [Ajouer un title à une fenêtre de terminal](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-frames/README.md#adding-titles-open-file-tab-or-terminal-window-title) :
 
@@ -342,11 +348,11 @@ Le titre optionnel d'un bloc de code peut être défini soit avec un attribut `t
   npm install
   ```
 
-  ````md
+  ```md
   ```bash title="Installation des dépendances…"
   npm install
   ```
-  ````
+  ```
 
 - [Désactiver les cadres de fenêtre avec `frame="none"`](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-frames/README.md#overriding-frame-types) :
 
@@ -354,11 +360,11 @@ Le titre optionnel d'un bloc de code peut être défini soit avec un attribut `t
   echo "Ceci n'est pas affiché comme un terminal malgré l'utilisation du langage bash"
   ```
 
-  ````md
+  ```md
   ```bash frame="none"
   echo "Ceci n'est pas affiché comme un terminal malgré l'utilisation du langage bash"
   ```
-  ````
+  ```
 
 ## Autres fonctionnalités courantes de Markdown
 
