@@ -31,7 +31,7 @@ L’ajout d’un logo personnalisé à l’en-tête du site est un moyen rapide 
    // astro.config.mjs
    import { defineConfig } from 'astro/config';
    import starlight from '@astrojs/starlight';
-
+   
    export default defineConfig({
    	integrations: [
    		starlight({
@@ -309,7 +309,7 @@ Pour utiliser Google Fonts, suivez le [Guide de configuration de Fontsource](#co
 
    ```css
    /* src/fonts/font-face.css */
-
+   
    @font-face {
    	font-family: 'Police Personnalisee';
    	/* Utilisez le chemin relatif vers le fichier de police dans la fonction `url()`. */
@@ -326,7 +326,7 @@ Pour utiliser Google Fonts, suivez le [Guide de configuration de Fontsource](#co
    // astro.config.mjs
    import { defineConfig } from 'astro/config';
    import starlight from '@astrojs/starlight';
-
+   
    export default defineConfig({
    	integrations: [
    		starlight({
@@ -345,11 +345,11 @@ Pour utiliser Google Fonts, suivez le [Guide de configuration de Fontsource](#co
 Le projet [Fontsource](https://fontsource.org/) simplifie l’utilisation des polices Google et d’autres polices open source.
 Il fournit des modules npm que vous pouvez installer pour les polices que vous souhaitez utiliser et inclut des fichiers CSS prêts à l’emploi à ajouter à votre projet.
 
-1.  Trouvez la police que vous souhaitez utiliser dans le [catalogue de Fontsource](https://fontsource.org/). Cet exemple utilisera [IBM Plex Serif](https://fontsource.org/fonts/ibm-plex-serif).
+1. Trouvez la police que vous souhaitez utiliser dans le [catalogue de Fontsource](https://fontsource.org/). Cet exemple utilisera [IBM Plex Serif](https://fontsource.org/fonts/ibm-plex-serif).
 
-2.  Installez le package pour la police choisie. Vous pouvez trouver le nom du package en cliquant sur "Installer" sur la page de police Fontsource.
+2. Installez le package pour la police choisie. Vous pouvez trouver le nom du package en cliquant sur "Installer" sur la page de police Fontsource.
 
-        <Tabs>
+   <Tabs>
 
     <TabItem label="npm">
 
@@ -375,28 +375,28 @@ Il fournit des modules npm que vous pouvez installer pour les polices que vous s
 
       </Tabs>
 
-3.  Ajoutez les fichiers CSS Fontsource au tableau `customCss` de Starlight dans `astro.config.mjs` :
+3. Ajoutez les fichiers CSS Fontsource au tableau `customCss` de Starlight dans `astro.config.mjs` :
 
-        ```diff lang="js"
-        // astro.config.mjs
-        import { defineConfig } from "astro/config";
-        import starlight from "@astrojs/starlight";
+   ```diff lang="js"
+   // astro.config.mjs
+   import { defineConfig } from "astro/config";
+   import starlight from "@astrojs/starlight";
+   
+   export default defineConfig({
+     integrations: [
+       starlight({
+         title: "Site avec polices personnalisées Fontsource",
+         customCss: [
+   +        // Fichiers Fontsource pour les graisses regular et semi-bold.
+   +        "@fontsource/ibm-plex-serif/400.css",
+   +        "@fontsource/ibm-plex-serif/600.css",
+         ],
+       }),
+     ],
+   });
+   ```
 
-        export default defineConfig({
-          integrations: [
-            starlight({
-              title: "Site avec polices personnalisées Fontsource",
-              customCss: [
-        +        // Fichiers Fontsource pour les graisses regular et semi-bold.
-        +        "@fontsource/ibm-plex-serif/400.css",
-        +        "@fontsource/ibm-plex-serif/600.css",
-              ],
-            }),
-          ],
-        });
-        ```
-
-    Fontsource fournit plusieurs fichiers CSS pour chaque police. Consultez la [documentation Fontsource](https://fontsource.org/docs/getting-started/install#4-weights-and-styles) sur l’inclusion de différentes graisses et styles pour comprendre lesquels utiliser.
+   Fontsource fournit plusieurs fichiers CSS pour chaque police. Consultez la [documentation Fontsource](https://fontsource.org/docs/getting-started/install#4-weights-and-styles) sur l’inclusion de différentes graisses et styles pour comprendre lesquels utiliser.
 
 ### Utiliser vos polices personnalisées
 
