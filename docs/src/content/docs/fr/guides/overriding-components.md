@@ -30,7 +30,7 @@ Redéfinir les composants par défaut de Starlight peut être utile lorsque :
    // src/components/EmailLink.astro
    import type { Props } from '@astrojs/starlight/props';
    ---
-
+   
    <a href="mailto:houston@example.com">Me contacter par courriel</a>
    ```
 
@@ -40,7 +40,7 @@ Redéfinir les composants par défaut de Starlight peut être utile lorsque :
    // astro.config.mjs
    import { defineConfig } from 'astro/config';
    import starlight from '@astrojs/starlight';
-
+   
    export default defineConfig({
      integrations: [
        starlight({
