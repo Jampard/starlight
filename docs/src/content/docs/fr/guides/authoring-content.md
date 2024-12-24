@@ -18,6 +18,8 @@ Franchement c'est asse complique.
 - [x] ce
 - [x] m
 
+![](https://holocron.so/uploads/86ba7fab-tokyo-pink.png)
+
 ```md title="src/content/docs/exemple.md"
 ---
 title: Le titre de ma page
@@ -123,8 +125,7 @@ Vous pouvez imbriquer n'importe quel autre type de contenu Markdown à l'intéri
 
 ### Note aside
 
-:::note
-Starlight est une boîte à outils pour sites web de documentation construite avec [Astro](https://astro.build/). Vous pouvez démarrer avec cette commande :
+:::note Starlight est une boîte à outils pour sites web de documentation construite avec [Astro](https://astro.build/). Vous pouvez démarrer avec cette commande :
 
 ```sh
 npm run create astro@latest --template starlight
