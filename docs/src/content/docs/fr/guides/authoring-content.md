@@ -1,6 +1,6 @@
 ---
 title: Création de contenu en Markdown
-description: Un aperçu de la syntaxe Markdown prise en charge par Starlight.
+description: Un aperçu de la syntaxe Markdown prise en charge par Starlight.ss
 ---
 
 Starlight prend en charge l'ensemble de la syntaxe [Markdown](https://daringfireball.net/projects/markdown/) dans les fichiers `.md` ainsi que la syntaxe frontale [YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f) pour définir des métadonnées telles qu'un titre et une description.
