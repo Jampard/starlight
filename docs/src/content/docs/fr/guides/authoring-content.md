@@ -12,6 +12,8 @@ Veillez à consulter les [MDX docs](https://mdxjs.com/docs/what-is-mdx/#markdown
 Vous pouvez personnaliser chaque page individuellement en définissant des valeurs dans leur frontmatter.
 Le frontmatter se situe en haut de vos fichiers entre les séparateurs `---` :
 
+fai pr
+
 Franchement c'est asse complique.
 
 - [x] deja
@@ -142,6 +144,7 @@ npm run create astro@latest --template starlight
 ```
 
 :::
+
 ```
 
 ### Titres personnalisés dans les asides
@@ -222,6 +225,7 @@ var fun = function lang(l) {
   return true;
 };
 ```
+
 ```
 
 ### Fonctionnalités d'Expressive Code
@@ -250,76 +254,80 @@ Certaines des options les plus courantes sont présentées ci-dessous :
     // Cette ligne (#2) et la suivante sont mises en évidence
     return 'Ceci est la ligne #3 de cet exemple';
   }
-  ```
+```
 
-  ```md
-  ```js {2-3}
-  function demo() {
-    // Cette ligne (#2) et la suivante sont mises en évidence
-    return 'Ceci est la ligne #3 de cet exemple';
-  }
-  ```
-  ```
+```md
+```js {2-3}
+function demo() {
+  // Cette ligne (#2) et la suivante sont mises en évidence
+  return 'Ceci est la ligne #3 de cet exemple';
+}
+```
+
+```
 
 - [Marquer des sélections de texte à l'aide du marqueur `" "` ou d'expressions régulières](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-text-markers/README.md#marking-individual-text-inside-lines) :
 
-  ```js "termes individuels" /Même.*charge/
-  // Des termes individuels peuvent également être mis en évidence
-  function demo() {
-    return 'Même les expressions régulières sont prises en charge';
-  }
-  ```
+```js "termes individuels" /Même.*charge/
+// Des termes individuels peuvent également être mis en évidence
+function demo() {
+  return 'Même les expressions régulières sont prises en charge';
+}
+```
 
-  ```md
-  ```js "termes individuels" /Même.*charge/
-  // Des termes individuels peuvent également être mis en évidence
-  function demo() {
-    return 'Même les expressions régulières sont prises en charge';
-  }
-  ```
-  ```
+```md
+```js "termes individuels" /Même.*charge/
+// Des termes individuels peuvent également être mis en évidence
+function demo() {
+  return 'Même les expressions régulières sont prises en charge';
+}
+```
+
+```
 
 - [Marquer du texte ou des lignes comme insérés ou supprimés avec `ins` ou `del`](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-text-markers/README.md#selecting-marker-types-mark-ins-del) :
 
-  ```js "return true;" ins="insertion" del="suppression"
-  function demo() {
-    console.log("Voici des marqueurs d'insertion et de suppression");
-    // La déclaration return utilise le type de marqueur par défaut
-    return true;
-  }
-  ```
+```js "return true;" ins="insertion" del="suppression"
+function demo() {
+  console.log("Voici des marqueurs d'insertion et de suppression");
+  // La déclaration return utilise le type de marqueur par défaut
+  return true;
+}
+```
 
-  ```md
-  ```js "return true;" ins="insertion" del="suppression"
-  function demo() {
-    console.log("Voici des marqueurs d'insertion et de suppression");
-    // La déclaration return utilise le type de marqueur par défaut
-    return true;
-  }
-  ```
-  ```
+```md
+```js "return true;" ins="insertion" del="suppression"
+function demo() {
+  console.log("Voici des marqueurs d'insertion et de suppression");
+  // La déclaration return utilise le type de marqueur par défaut
+  return true;
+}
+```
+
+```
 
 - [Combiner coloration syntaxique et syntaxe de type `diff`](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-text-markers/README.md#combining-syntax-highlighting-with-diff-like-syntax) :
 
-  ```diff lang="js"
-    function ceciEstDuJavaScript() {
-      // Ce bloc entier utilise la coloration syntaxique JavaScript,
-      // et nous pouvons toujours y ajouter des marqueurs de différence !
-  -   console.log('Ancien code à supprimer')
-  +   console.log('Nouveau code brillant !')
-    }
-  ```
+```diff lang="js"
+  function ceciEstDuJavaScript() {
+    // Ce bloc entier utilise la coloration syntaxique JavaScript,
+    // et nous pouvons toujours y ajouter des marqueurs de différence !
+-   console.log('Ancien code à supprimer')
++   console.log('Nouveau code brillant !')
+  }
+```
 
-  ```md
-  ```diff lang="js"
-    function ceciEstDuJavaScript() {
-      // Ce bloc entier utilise la coloration syntaxique JavaScript,
-      // et nous pouvons toujours y ajouter des marqueurs de différence !
-  -   console.log('Ancien code à supprimer')
-  +   console.log('Nouveau code brillant !')
-    }
-  ```
-  ```
+```md
+```diff lang="js"
+  function ceciEstDuJavaScript() {
+    // Ce bloc entier utilise la coloration syntaxique JavaScript,
+    // et nous pouvons toujours y ajouter des marqueurs de différence !
+-   console.log('Ancien code à supprimer')
++   console.log('Nouveau code brillant !')
+  }
+```
+
+```
 
 #### Cadres et titres
 
@@ -331,41 +339,44 @@ Le titre optionnel d'un bloc de code peut être défini soit avec un attribut `t
 
 - [Ajouter un nom de fichier avec un commentaire](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-frames/README.md#adding-titles-open-file-tab-or-terminal-window-title) :
 
-  ```js
-  // mon-fichier-de-test.js
-  console.log('Hello World!');
-  ```
+```js
+// mon-fichier-de-test.js
+console.log('Hello World!');
+```
 
-  ```md
-  ```js
-  // mon-fichier-de-test.js
-  console.log('Hello World!');
-  ```
-  ```
+```md
+```js
+// mon-fichier-de-test.js
+console.log('Hello World!');
+```
+
+```
 
 - [Ajouer un title à une fenêtre de terminal](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-frames/README.md#adding-titles-open-file-tab-or-terminal-window-title) :
 
-  ```bash title="Installation des dépendances…"
-  npm install
-  ```
+```bash title="Installation des dépendances…"
+npm install
+```
 
-  ```md
-  ```bash title="Installation des dépendances…"
-  npm install
-  ```
-  ```
+```md
+```bash title="Installation des dépendances…"
+npm install
+```
+
+```
 
 - [Désactiver les cadres de fenêtre avec `frame="none"`](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-frames/README.md#overriding-frame-types) :
 
-  ```bash frame="none"
-  echo "Ceci n'est pas affiché comme un terminal malgré l'utilisation du langage bash"
-  ```
+```bash frame="none"
+echo "Ceci n'est pas affiché comme un terminal malgré l'utilisation du langage bash"
+```
 
-  ```md
-  ```bash frame="none"
-  echo "Ceci n'est pas affiché comme un terminal malgré l'utilisation du langage bash"
-  ```
-  ```
+```md
+```bash frame="none"
+echo "Ceci n'est pas affiché comme un terminal malgré l'utilisation du langage bash"
+```
+
+```
 
 ## Autres fonctionnalités courantes de Markdown
 
@@ -374,3 +385,4 @@ Starlight prend en charge toutes les autres syntaxes de rédaction Markdown, tel
 ## Configuration avancée de Markdown et MDX
 
 Starlight utilise le moteur de rendu Markdown et MDX d'Astro basé sur remark et rehype. Vous pouvez ajouter la prise en charge de syntaxe et comportement personnalisés en ajoutant `remarkPlugins` ou `rehypePlugins` dans votre fichier de configuration Astro. Pour en savoir plus, consultez [« Configuration de Markdown et MDX »](https://docs.astro.build/fr/guides/markdown-content/#configuration-de-markdown-et-mdx) dans la documentation d'Astro.
+```
